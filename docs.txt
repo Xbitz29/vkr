@@ -1,0 +1,26 @@
+Документация:
+Формат запроса:
+https://api.appmetrica.yandex.ru/stat/v1/data
+  ? ids=<int,int,...>
+  & [metrics=<string>]
+  & [date1=<string>]
+  & [date2=<string>]
+  & [dimensions=<string>]
+  & [filters=<string>]
+  & [group=<group_type>]
+  & [sort=<string>]
+
+Описание полей:
+1. ids - APIKey или список APIKey через запятую.
+2. metrics - метрики через запятую (например: ym:u:users, ym:u:sessions).
+3. date1 - Начало периода (YYYY-MM-DD). Допустимы значения: today, yesterday, ndaysAgo. По умолчанию: 6daysAgo.
+5. date2 - Конец периода (YYYY-MM-DD). Допустимы значения: today, yesterday, ndaysAgo. По умолчанию: today.
+6. dimensions - Список группировок, разделенных запятой(например: ym:u:date, ym:u:operatingSystem).
+7. filters - Фильтр сегментации.
+8. group - Группировка данных по времени. По умолчанию: week. Допустимые значения: all(временной интервал не разбивается), week, month, hour, year, day, minute
+9. sort - Список группировок и метрик, разделенных запятой, по которым осуществляется сортировка. По умолчанию сортировка производится по возрастанию. Чтобы отсортировать данные по убыванию, укажи знак '-' перед группировкой или метрикой.
+
+Основные метрики:
+ym:u:users - Количество пользователей
+ym:u:sessions - Количество сессий
+ym:u:devices - Количество устройств
